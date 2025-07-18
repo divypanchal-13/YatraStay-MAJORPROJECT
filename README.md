@@ -29,7 +29,7 @@ YatraStay is a modern, feature-rich Airbnb clone web application designed to sim
 
 1. **Clone the repo:**
    ```bash
-   git clone https://github.com/yourusername/YatraStay.git
+   git clone https://github.com/divypanchal-13/YatraStay.git
    cd YatraStay
    ```
 
