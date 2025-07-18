@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YatraStay - Your Getaway</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- External Stylesheet -->
+  <!-- <link rel="stylesheet" href="/styles.css" /> -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .cursor {
+      height: 7vw;
+      width: 7vw;
+      background-color: red;
+      border-radius: 50%;
+      position: fixed;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50%, -50%);
+      pointer-events: none ;
+    }
+
+    .cursor h5 {
+      font-size: 1.2vw;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      background: #f8f9fa;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      
+    }
+
+    header h1 {
+      display: flex;
+      align-items: center;
+      color: #d13d3d;
+      font-weight: 800;
+      font-size: 24px;
+      z-index: 4;
+    }
+
+    header h1 img {
+      height: 28px;
+      margin-right: 10px;
+ 
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero video.bg-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: brightness(0.6);
+      z-index: 1;
+    }
+
+    .hero::before,
+    .video-overlay {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 700px;
+    }
+
+    .hero-content h2 {
+      font-size: 48px;
+      margin-bottom: 16px;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      margin-bottom: 24px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .cta-button {
+      background-color: #d13d3d;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      font-size: 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #bb2f2f;
+    }
+
+    /* Listings */
+    .listings-section {
+      padding: 50px 40px;
+      text-align: center;
+    }
+
+    .listings-section h3 {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    .listing-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .card {
+      width: 280px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 16px;
+      text-align: left;
+    }
+
+    .card-body h4 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .card-body p {
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h2 {
+        font-size: 36px;
+        
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .cursor {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"><h5>YatraStay</h5></div>
+
+  <header>
+    <h1>
+      <img src="/images/logo.png" alt="YatraStay Logo" />
+      YatraStay
+    </h1>
+    <nav>
+      <a href="/listings">All Listings</a>
+      <a href="/listings/new">Add New Listing</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="/videos/hero-bg4.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+
+    <div class="hero-content">
+      <h2>Your Next Getaway Awaits</h2>
+      <p>Discover beautiful stays handpicked just for you</p>
+      <a href="/listings" class="cta-button">Browse Listings</a>
+    </div>
+  </section>
+
+  <section class="listings-section">
+    <h3>Top Picks</h3>
+    <div class="listing-cards">
+      <div class="card">
+        <img src="/images/listing1.avif" alt="Cozy Beachfront Cottage" />
+        <div class="card-body">
+          <h4>Cozy Beachfront Cottage</h4>
+          <p>₹1,500 / night</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/images/listing2.avif" alt="Modern Loft in Downtown" />
+        <div class="card-body">
+          <h4>Modern Loft in Downtown</h4>
+          <p>₹1,200 / night</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Cursor movement
+    const cursor = document.querySelector(".cursor");
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+  </script>
+
+</body>
+</html>
