@@ -24,6 +24,15 @@ YatraStay is a modern, feature-rich Airbnb clone web application designed to sim
 - **Validation:** Joi
 
 ---
+## 🖼️ Screenshots
+
+Here are some screenshots showcasing YatraStay:
+
+| Home Page | Listing Details | Add New Listing |
+|-----------|----------------|-----------------|
+| ![Home Page](public/images/homepage.png) | ![Listing Details](public/images/listing-details.png) | ![Add Listing](public/images/add-listing.png) |
+
+---
 
 ## ⚡ Getting Started
 
